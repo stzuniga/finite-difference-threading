@@ -63,7 +63,7 @@ Plots and benchmarking data will be saved in the `report/` directory.
 
 You can view the detailed results in the report below:
 
- **[Click here to view the full report](report/results.pdf)**  
+ **[Click here to view the full report](report/hw4.pdf)**  
 
 ### Key Insights:
 - **Speedup Analysis**: Evaluates computational efficiency across different thread counts.
