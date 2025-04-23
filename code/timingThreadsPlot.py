@@ -1,13 +1,3 @@
-"""
-This Python script will generate the plots for the TIMINGS of the threads
-as requested in Task 2 of Homework number 4. This file takes in the
-.txt files that are generated for each individual timing generated
-in the hw4_skeleton.py file and will output a plot and save 
-it as timings_plot.png
-"""
-
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 
