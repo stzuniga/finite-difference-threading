@@ -14,10 +14,10 @@
 #SBATCH --time=00:25:00 
 
 ## This is the filename for all printed output from your code
-#SBATCH --output hw4_output
+#SBATCH --output fd_threading_output
 
 ## This is the filename for all printed error from your code
-#SBATCH --error hw4_error
+#SBATCH --error fd_threading_error
 
 ## The debug partition will likely be faster, but if your code takes more than
 ## 8 processors, you need to switch to the general partition 
@@ -59,5 +59,5 @@ cd $SLURM_SUBMIT_DIR/
 # Now, run your program.  Just change the below filename to run a 
 # different program. 
 ########################################################################
-srun python hw4_skeleton.py
+srun python finite_difference_threading.py
 
