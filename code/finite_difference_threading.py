@@ -130,7 +130,7 @@ def fcnpp(x, y):
     #return 4 * ones_like(x)
 
 #Performance configurations
-option = 2 #MODIFY this to selection configuration
+option = 1 #MODIFY this to selection configuration
 
 if option == 1:
     NN = array([840*6]) # Large grid for HPC Cluster
@@ -273,17 +273,17 @@ for i,nt in enumerate(num_threads):
     # Comment out plotting functions.                #
     #################################################
 
-    # Saving plot and output timings for Option 2 and Option 3
-    # Plot convergence curve
-    pyplot.loglog(NN, error[i, :], label='Error')  # Plot error values
-    pyplot.loglog(NN.astype(float), (NN.astype(float) ** -2), label='Ref Quadratic', linestyle='--')
+    # # Saving plot and output timings for Option 2 and Option 3
+    # # Plot convergence curve
+    # pyplot.loglog(NN, error[i, :], label='Error')  # Plot error values
+    # pyplot.loglog(NN.astype(float), (NN.astype(float) ** -2), label='Ref Quadratic', linestyle='--')
 
-    # Formatting the plot
-    pyplot.xlabel('Grid Size (N)', fontsize=14)
-    pyplot.ylabel('Error (L2 Norm)', fontsize=14)
-    pyplot.title(f'Convergence for {nt} threads', fontsize=16)
-    pyplot.legend(fontsize=12)
-    pyplot.savefig(f'output/error{i}.png', dpi=500, format='png', bbox_inches='tight', pad_inches=0.0)
+    # # Formatting the plot
+    # pyplot.xlabel('Grid Size (N)', fontsize=14)
+    # pyplot.ylabel('Error (L2 Norm)', fontsize=14)
+    # pyplot.title(f'Convergence for {nt} threads', fontsize=16)
+    # pyplot.legend(fontsize=12)
+    # pyplot.savefig(f'output/error{i}.png', dpi=500, format='png', bbox_inches='tight', pad_inches=0.0)
 
 
     # Save timings for Option 1 and Option 2
@@ -306,29 +306,32 @@ for i,nt in enumerate(num_threads):
 
     # Post Analysis: Examine the stencil structure at different grid locations
 
-    # Uncomment this block to inspect how the Poisson matrix (A) varies
-    # between corner, edge, and interior points. Useful for verifying stencil correctness.
+     #################################### NOTE ############################
+    #   Uncomment this block to inspect how the Poisson matrix (A) varies  #
+    #   between corner, edge, and interior points.                        #  
+    #   Useful for verifying stencil correctness.                        # 
+    ####################################################################
 
-    import numpy as np
-    from scipy.sparse import csr_matrix
+    # import numpy as np
+    # from scipy.sparse import csr_matrix
 
-    n = 5  
-    A = poisson((n, n), format='csr')
+    # n = 5  
+    # A = poisson((n, n), format='csr')
 
-    corner_row = 0          # Top-left corner
-    edge_row = 1            # Next to corner
-    interior_row = n + 1    # Fully interior point
+    # corner_row = 0          # Top-left corner
+    # edge_row = 1            # Next to corner
+    # interior_row = n + 1    # Fully interior point
 
-    print("Matrix row for corner point (0, 0):")
-    print("Data:", A[corner_row, :].data)
-    print("Indices:", A[corner_row, :].indices)
+    # print("Matrix row for corner point (0, 0):")
+    # print("Data:", A[corner_row, :].data)
+    # print("Indices:", A[corner_row, :].indices)
 
-    print("\\nMatrix row for edge point (0, 1):")
-    print("Data:", A[edge_row, :].data)
-    print("Indices:", A[edge_row, :].indices)
+    # print("\\nMatrix row for edge point (0, 1):")
+    # print("Data:", A[edge_row, :].data)
+    # print("Indices:", A[edge_row, :].indices)
 
-    print("\\nMatrix row for interior point (1, 1):")
-    print("Data:", A[interior_row, :].data)
-    print("Indices:", A[interior_row, :].indices)
+    # print("\\nMatrix row for interior point (1, 1):")
+    # print("Data:", A[interior_row, :].data)
+    # print("Indices:", A[interior_row, :].indices)
 
 
