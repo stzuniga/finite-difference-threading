@@ -2,3 +2,7 @@
 # Ignore output files
 code/output/*
 !code/output/.gitkeep
+
+# Temporarily hide from remote
+report/
+README.md
