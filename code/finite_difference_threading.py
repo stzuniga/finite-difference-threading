@@ -283,13 +283,14 @@ for i,nt in enumerate(num_threads):
     pyplot.ylabel('Error (L2 Norm)', fontsize=14)
     pyplot.title(f'Convergence for {nt} threads', fontsize=16)
     pyplot.legend(fontsize=12)
-    pyplot.savefig(f'error{i}.png', dpi=500, format='png', bbox_inches='tight', pad_inches=0.0)
+    pyplot.savefig(f'output/error{i}.png', dpi=500, format='png', bbox_inches='tight', pad_inches=0.0)
+
 
     # Save timings for Option 1 and Option 2
-    savetxt('timings.txt', timings)
-    savetxt('timings1thread.txt', timings)
-    savetxt('timings2thread.txt', timings)
-    savetxt('timings3thread.txt', timings)
+    savetxt('output/timings.txt', timings)
+    savetxt('output/timings1thread.txt', timings)
+    savetxt('output/timings2thread.txt', timings)
+    savetxt('output/timings3thread.txt', timings)
 
     ####################### NOTE ####################
     #       If using option 2 or Option 3            #
@@ -297,7 +298,7 @@ for i,nt in enumerate(num_threads):
     #################################################
 
     ## Save timings for Option 1
-    #savetxt('timingsCARC.txt', timings)
+    #savetxt('outputs/timingsCARC.txt', timings)
 
 
 

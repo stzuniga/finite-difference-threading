@@ -1,0 +1,4 @@
+
+# Ignore output files
+code/output/*
+!code/output/.gitkeep
