@@ -14,10 +14,10 @@
 #SBATCH --time=00:25:00 
 
 ## This is the filename for all printed output from your code
-#SBATCH --output fd_threading_output
+#SBATCH --output outputHPC/fd_threading_output.txt
 
 ## This is the filename for all printed error from your code
-#SBATCH --error fd_threading_error
+#SBATCH --error outputHPC/fd_threading_error.txt
 
 ## The debug partition will likely be faster, but if your code takes more than
 ## 8 processors, you need to switch to the general partition 
