@@ -130,7 +130,7 @@ def fcnpp(x, y):
     #return 4 * ones_like(x)
 
 #Performance configurations
-option = 1 #MODIFY this to selection configuration
+option = 2 #MODIFY this to selection configuration
 
 if option == 1:
     NN = array([840*6]) # Large grid for HPC Cluster
@@ -138,7 +138,7 @@ if option == 1:
 
 elif option == 2: # Consider starting with num_threads=[1], debug in serial where num_threads=[1]
     NN = 210*arange(1,6) # Moderate Grid for convergence study on on local machine.
-    num_threads = [1] # Number of Threads
+    num_threads = [3] # Number of Threads
 
 elif option == 3: # Consider starting with num_threads=[1], debug in serial where num_threads=[1]
     NN = array([6]) # Small Grid for debugging on local.
@@ -273,24 +273,30 @@ for i,nt in enumerate(num_threads):
     # Comment out plotting functions.                #
     #################################################
 
-    # # Saving plot and output timings for Option 2 and Option 3
-    # # Plot convergence curve
-    # pyplot.loglog(NN, error[i, :], label='Error')  # Plot error values
-    # pyplot.loglog(NN.astype(float), (NN.astype(float) ** -2), label='Ref Quadratic', linestyle='--')
+    # Saving plot and output timings for Option 2 and Option 3
+    # Plot convergence curve
+    pyplot.loglog(NN, error[i, :], label='Error')  # Plot error values
+    pyplot.loglog(NN.astype(float), (NN.astype(float) ** -2), label='Ref Quadratic', linestyle='--')
 
-    # # Formatting the plot
-    # pyplot.xlabel('Grid Size (N)', fontsize=14)
-    # pyplot.ylabel('Error (L2 Norm)', fontsize=14)
-    # pyplot.title(f'Convergence for {nt} threads', fontsize=16)
-    # pyplot.legend(fontsize=12)
-    # pyplot.savefig(f'output/error{i}.png', dpi=500, format='png', bbox_inches='tight', pad_inches=0.0)
+    # Formatting the plot
+
+    for n in num_threads:
+        pyplot.xlabel('Grid Size (N)', fontsize=14)
+        pyplot.ylabel('Error (L2 Norm)', fontsize=14)
+        pyplot.title(f'Convergence for {nt} threads', fontsize=16)
+        pyplot.legend(fontsize=12)
+        pyplot.savefig(f'output/error_{nt}threads.png', dpi=500, format='png', bbox_inches='tight', pad_inches=0.0)
 
 
-    # Save timings for Option 1 and Option 2
-    savetxt('output/timings.txt', timings)
-    savetxt('output/timings1thread.txt', timings)
-    savetxt('output/timings2thread.txt', timings)
-    savetxt('output/timings3thread.txt', timings)
+
+    # # Save timings for Option 1 and Option 2
+    # savetxt('output/timings.txt', timings)
+    # savetxt('output/timings1thread.txt', timings)
+    # savetxt('output/timings2thread.txt', timings)
+    # savetxt('output/timings3thread.txt', timings)
+
+    for n in num_threads:
+        savetxt(f'output/{n}threadSerialTimings.txt', timings)
 
     ####################### NOTE ####################
     #       If using option 2 or Option 3            #
