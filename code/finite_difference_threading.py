@@ -264,7 +264,7 @@ for i,nt in enumerate(num_threads):
         print("fpp numeric: ", fpp_numeric)
         print("fpp: ", fpp)
         print(min_time)
-    print(" ") #Spacer
+        print(" ") #Spacer
 
     ### End Loop over various grid-sizes
 
