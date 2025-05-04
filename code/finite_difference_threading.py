@@ -292,7 +292,6 @@ for i,nt in enumerate(num_threads):
     # # # Save timings for Option 1 and Option 2
     # # savetxt('output/timings.txt', timings)
     # # savetxt('output/timings1thread.txt', timings)
-    # # savetxt('output/timings2thread.txt', timings)
     # # savetxt('output/timings3thread.txt', timings)
 
     # for n in num_threads:
