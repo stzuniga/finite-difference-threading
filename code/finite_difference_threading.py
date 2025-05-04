@@ -304,7 +304,7 @@ for i,nt in enumerate(num_threads):
     #################################################
 
     ## Save timings for Option 1
-    savetxt('outputs/parallelTimings.txt', timings)
+    savetxt('outputHPC/parallelTimings.txt', timings)
 
 
 
