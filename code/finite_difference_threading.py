@@ -130,7 +130,7 @@ def fcnpp(x, y):
     #return 4 * ones_like(x)
 
 #Performance configurations
-option = 1 #MODIFY this to selection configuration
+option = 2 #MODIFY this to selection configuration
 
 if option == 1:
     NN = array([840*6]) # Large grid for HPC Cluster
