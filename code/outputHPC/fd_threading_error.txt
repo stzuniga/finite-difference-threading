@@ -1,0 +1,2 @@
+/var/spool/slurm/slurmd/job3807736/slurm_script: line 44: activate: No such file or directory
+FATAL:   could not open image /users/stzuniga/finite-difference-threading/code/stzuniga_fdsolver_latest-2025-06-24-d4c76b0a9e7a.simg: failed to retrieve path for /users/stzuniga/finite-difference-threading/code/stzuniga_fdsolver_latest-2025-06-24-d4c76b0a9e7a.simg: lstat /users/stzuniga/finite-difference-threading/code/stzuniga_fdsolver_latest-2025-06-24-d4c76b0a9e7a.simg: no such file or directory
