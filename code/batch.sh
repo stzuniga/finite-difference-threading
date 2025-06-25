@@ -40,7 +40,7 @@
 #    $ conda create --name hopper_openmpi_py3 python=3.9 numpy openmpi mpi4py scipy ipython matplotlib
 #      < press y to accept installation of all new packages and the many dependencies > 
 
-# module load singularity/3.8.5-5x3v
+ module load singularity/3.8.5-5x3v
 # source activate hopper_openmpi_py3
 ########################################################################
 ########################################################################
