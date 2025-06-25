@@ -40,7 +40,7 @@
 #    $ conda create --name hopper_openmpi_py3 python=3.9 numpy openmpi mpi4py scipy ipython matplotlib
 #      < press y to accept installation of all new packages and the many dependencies > 
 
-module load miniconda3
+module load singularity/3.8.5-5x3v
 source activate hopper_openmpi_py3
 ########################################################################
 ########################################################################
@@ -59,5 +59,5 @@ cd $SLURM_SUBMIT_DIR/
 # Now, run your program.  Just change the below filename to run a 
 # different program. 
 ########################################################################
-srun python finite_difference_threading.py
+singularity exec -B $PWD:/mnt stzuniga_fdsolver_latest-2025-06-24-d4c76b0a9e7a.simg python /mnt/finite_difference_threading.py
 
