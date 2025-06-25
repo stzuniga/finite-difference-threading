@@ -59,5 +59,4 @@ cd $SLURM_SUBMIT_DIR/
 # Now, run your program.  Just change the below filename to run a 
 # different program. 
 ########################################################################
-singularity exec stzuniga_fdsolver_latest-2025-06-24-d4c76b0a9e7a.simg python finite_difference_threading.py
-
+singularity exec fdsolver_latest-2025-06-24-bb87c9eaf86a.simg python finite_difference_threading.py
